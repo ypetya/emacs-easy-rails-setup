@@ -2,6 +2,18 @@
 #
 # Configure emacs for RoR development
 #
+#
+
+if ARGV[0] == "--help"
+	puts
+	puts "Usage"
+	puts "./install.rb <option>"
+	puts
+	puts "Options"
+	puts "--config = Just config, don't try and install ports"
+	puts
+	exit
+end
 
 # Define variables
 userhome=ENV["HOME"]
@@ -10,11 +22,13 @@ emacsfilebak = "#{userhome}/.emacs.before_script.bak"
 emacsdir = "#{userhome}/.emacs.d"
 emacsdirbak = "#{userhome}/.emacs.d.before_script.bak"
 
+unless ARGV[0] == "--config"
 
-# Install Ports
-%w[emacs cedet-common cedet-contrib css-mode debian-el ecb ede emacs-goodies-el html-helper-mode ruby-elisp semantic speedbar yaml-mode].each do|port|
-	puts "Installing #{port}..."
-	`sudo apt-get -y install #{port}`
+	# Install Ports
+	%w[emacs cedet-common cedet-contrib css-mode debian-el ecb ede emacs-goodies-el html-helper-mode ruby-elisp semantic speedbar yaml-mode].each do|port|
+		puts "Installing #{port}..."
+		`sudo apt-get -y install #{port}`
+	end
 end
 
 
