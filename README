@@ -1,1 +1,25 @@
 This script should install all plugins for emacs relating to Rails and configure them to all work.
+
+This has been based on Ubuntu 810, but could be adjusted to work with other OS's/Linux Distros
+
+Ports used:
+	cedet-common	- collection of Emacs Dev tools
+	cedet-contrib
+	css-mode 
+	debian-el 
+	ecb 
+	ede 
+	eieio 
+	emacs-goodies-el 
+	html-helper-mode 
+	ruby-elisp 
+	ruby1.8-elisp 
+	semantic 
+	speedbar 
+	yaml-mode
+
+	emacs
+		emacs22-bin-common 
+		emacs22-common 
+		emacs22-gtk 
+
