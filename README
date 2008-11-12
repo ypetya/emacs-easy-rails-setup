@@ -2,6 +2,13 @@ This script should install all plugins for emacs relating to Rails and configure
 
 This has been based on Ubuntu 810, but could be adjusted to work with other OS's/Linux Distros
 
+Installation
+
+1. Clone this repository
+2. change into the directory 
+3. make install.rb executable (chmod +x install.rb)
+4. Run the script (./install.rb)
+
 Ports used:
 	cedet-common	- collection of Emacs Dev tools
 	cedet-contrib
