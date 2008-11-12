@@ -5,6 +5,7 @@
 
 # Define variables
 userhome=ENV["HOME"]
+emacsfile = "#{userhome}/.emacs"
 emacsbak = "#{userhome}/.emacs.before_script"
 
 =begin
@@ -20,11 +21,13 @@ end
 puts "Copying emacs config file..."
 
 # Create first time backup only if backup doesn't exist
-if File.exists?(emacsbak)
-	puts "Backup exists"
-else
-	puts "Creating first time backup #{emacsbak}"
-	`cp #{userhome}/.emacs #{emacsbak}`
+if File.exists?(emacsfile)
+	if File.exists?(emacsbak)
+		puts "Backup exists"
+	else
+		puts "Creating first time backup #{emacsbak}"
+		`cp #{emacsfile} #{emacsbak}`
+	end
 end
 
 `cp .emacs #{userhome}`
