@@ -1,6 +1,7 @@
 ; directory to put various el files into
 (add-to-list 'load-path "~/.emacs.d/includes")
 (add-to-list 'load-path "~/.emacs.d/ruby-mode")
+(add-to-list 'load-path "~/.emacs.d/git-emacs")
 
 ; color themes
   (require 'color-theme)
@@ -167,3 +168,12 @@
 ;	    		 '(2 "_NET_WM_STATE_MAXIMIZED_HORZ" 0))
 ;)
 ;(toggle-fullscreen)
+;
+
+; GIT
+;(require 'git-emacs)
+
+; Intelligent file opener
+(require 'ido)
+(ido-mode t)
+
