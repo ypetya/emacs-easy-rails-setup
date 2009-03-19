@@ -1,8 +1,12 @@
 ; directory to put various el files into
 (add-to-list 'load-path "~/.emacs.d/includes")
 (add-to-list 'load-path "~/.emacs.d/ruby-mode")
-(add-to-list 'load-path "~/.emacs.d/git-emacs")
+;(add-to-list 'load-path "~/.emacs.d/git-emacs") ; old git plugin.
 (add-to-list 'load-path "~/.emacs.d/yasnippet")
+(add-to-list 'load-path "~/.emacs.d/egg") ; new git plugin
+
+; git egg
+(require 'egg)
 
 ; yasnippet
 (require 'yasnippet)
@@ -132,7 +136,7 @@
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  '(ecb-options-version "2.32")
- '(rails-ws:default-server-type "webrick"))
+ '(rails-ws:default-server-type "mongrel"))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
