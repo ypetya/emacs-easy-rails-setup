@@ -180,10 +180,16 @@
 ;(toggle-fullscreen)
 ;
 
-; GIT
-;(require 'git-emacs)
-
 ; Intelligent file opener
 (require 'ido)
 (ido-mode t)
+
+(display-time)
+
+
+; Keybinding
+(global-set-key [f5] 'egg-status)
+(global-set-key [f6] 'shell)
+(global-set-key [f7] 'split-window-vertically)
+(global-set-key [f8] 'next-multiframe-window)
 
