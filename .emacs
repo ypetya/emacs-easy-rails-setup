@@ -189,7 +189,24 @@
 
 ; Keybinding
 (global-set-key [f5] 'egg-status)
-(global-set-key [f6] 'shell)
+(global-set-key [f6] 'eshell)
 (global-set-key [f7] 'split-window-vertically)
 (global-set-key [f8] 'next-multiframe-window)
 
+(defun m-eshell-hook ()
+	; define control p, control n and the up/down arrow
+	;
+	(define-key eshell-mode-map [up] 'eshell-previous-matching-input-from-input)
+	(define-key eshell-mode-map [down] 'eshell-next-matching-input-from-input)
+
+	(define-key eshell-mode-map [(control p)] 'eshell-previous-matching-input-from-input)
+	(define-key eshell-mode-map [(control n)] 'eshell-next-matching-input-from-input)
+
+)
+
+(add-hook 'eshell-mode-hook 'm-eshell-hook)
+
+
+
+; rcov
+(require 'rcov)
