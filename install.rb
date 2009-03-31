@@ -31,6 +31,10 @@ unless ARGV[0] == "--config"
 	end
 end
 
+puts "Get git repositories"
+`git clone git://github.com/bogolisk/egg.git`
+`mv egg #{emacsdir}`
+
 
 puts "Copying emacs config file..."
 
