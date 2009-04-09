@@ -25,7 +25,7 @@ emacsdirbak = "#{userhome}/.emacs.d.before_script.bak"
 unless ARGV[0] == "--config"
 
 	# Install Ports
-	%w[emacs cedet-common cedet-contrib css-mode debian-el ecb ede emacs-goodies-el html-helper-mode ruby-elisp semantic speedbar yaml-mode].each do|port|
+	%w[emacs cedet-common cedet-contrib css-mode debian-el ecb ede emacs-goodies-el html-helper-mode ruby-elisp semantic speedbar yaml-mode emacs22-gtk].each do|port|
 		puts "Installing #{port}..."
 		`sudo apt-get -y install #{port}`
 	end
@@ -34,7 +34,8 @@ end
 puts "Get git repositories"
 `git clone git://github.com/bogolisk/egg.git`
 `mv egg #{emacsdir}`
-
+`git clone git://github.com/mislav/haml.git`
+`cp haml/extra/*.el #{emacsdir}/includes/`
 
 puts "Copying emacs config file..."
 

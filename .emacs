@@ -5,6 +5,10 @@
 (add-to-list 'load-path "~/.emacs.d/yasnippet")
 (add-to-list 'load-path "~/.emacs.d/egg") ; new git plugin
 
+; haml-sass
+(require 'haml-mode nil 't)
+(require 'sass-mode nil 't)
+
 ; git egg
 (require 'egg)
 
